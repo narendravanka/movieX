@@ -1,0 +1,40 @@
+<div class="container-column">
+  <div class="container">
+    <img
+      class="card-image"
+      mat-card-image
+      [src]="getImage(movie.poster_path)"
+    />
+    <div>
+      <div *ngIf="!movie?.adult; else elseTemplate">
+        <h3 [ngStyle]="{ color: 'smokewhite' }">U/A 13+</h3>
+      </div>
+      <ng-template #elseTemplate>
+        <h3 style="color: rgb(90, 3, 3)">A 18+</h3></ng-template
+      >
+      <h1>{{ movie?.original_title }}</h1>
+      <h4 class="background-text-color">{{ movie?.tagline }}</h4>
+      <p>{{ movie?.overview }}</p>
+      <div class="container">
+        &nbsp;
+        <h4 *ngIf="movie?.imdb_id">IMDb:</h4>
+        <h4>{{ movie?.vote_average }}</h4>
+        <h4>&nbsp; &nbsp;{{ hour }}h&nbsp;&nbsp;{{ minute }}&nbsp;min</h4>
+        &nbsp; &nbsp;
+        <h4>{{ year }}</h4>
+        <h4>&nbsp; &nbsp; Box office : {{ billion }}</h4>
+        <h4>&nbsp; &nbsp;{{ movie?.spoken_languages[0].name }}</h4>
+      </div>
+      <span>Genre :&nbsp;</span>
+      <span *ngFor="let genre of movie?.genres"> {{ genre.name }}, </span>
+      <h5 *ngIf="movie?.status; else elseBlock">Released</h5>
+      <ng-template #elseBlock>Coming soon</ng-template>
+    </div>
+  </div>
+  <div class="container-flex">
+    <app-movie-screenshot
+      *ngFor="let screenshot of screenshots"
+      [pic]="screenshot"
+    ></app-movie-screenshot>
+  </div>
+</div>

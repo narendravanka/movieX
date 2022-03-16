@@ -1,0 +1,22 @@
+.make-click {
+  cursor: pointer;
+}
+
+.card-image {
+  min-width: 300px;
+  max-width: 300px;
+  max-height: 500px;
+}
+
+mat-card {
+  margin-bottom: 10px;
+}
+h4 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 250px;
+}

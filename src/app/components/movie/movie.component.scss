@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+}
+.img {
+  margin: auto;
+}
+p,
+h1,
+h3,
+h4,
+h5,
+span,
+ng-template {
+  color: whitesmoke;
+}
+.container-flex {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.card-image {
+  min-width: 300px;
+  max-width: 300px;
+  max-height: 500px;
+}
+
+.container-column {
+  background-color: currentColor;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  margin: 0;
+}

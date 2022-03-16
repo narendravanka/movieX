@@ -1,0 +1,11 @@
+<mat-card [routerLink]="'./movie/' + movieResultCard.id" class="make-click">
+  <img
+    mat-card-image
+    [src]="getImagePath(movieResultCard.poster_path)"
+    alt="No img found"
+    class="card-image"
+  />
+  <h4 mat-card-title>
+    {{ movieResultCard.original_title }}
+  </h4>
+</mat-card>
